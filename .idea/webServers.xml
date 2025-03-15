@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3b3398ca-909e-4983-930e-246270dbda0d" name="北京B区 / 122机">
+        <fileTransfer accessType="SFTP" host="connect.bjb1.seetacloud.com" port="35395" sshConfigId="5014ffbf-075f-4c1a-a3f3-440eff607a4a" sshConfig="北京B区 / 122机">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="86dad4c9-2bcd-4eeb-9f7d-bb89631a3c0f" name="北京B区 / 271机">
+        <fileTransfer accessType="SFTP" host="connect.bjb1.seetacloud.com" port="28268" sshConfigId="ea0a1267-23ca-4303-a485-46a937f9e18f" sshConfig="北京B区 / 271机">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

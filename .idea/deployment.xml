@@ -10,6 +10,20 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="北京B区 / 122机">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/anti_fraud_sft" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="北京B区 / 271机">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/anti_fraud_sft" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
   </component>
 </project>

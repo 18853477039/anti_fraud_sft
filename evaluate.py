@@ -1,5 +1,6 @@
 import os
 import json
+import random
 import re
 import torch
 from typing import List, Dict
@@ -106,7 +107,7 @@ def run_test_batch(model, tokenizer, test_data: List[Dict], batch_size: int = 8,
         real_batch_labels = [item['label'] for item in batch_data]
         
         predictions = predict_batch(model, tokenizer, dialog_inputs, device)
-        pred_batch_labels = [prediction['is_fraud'] for prediction in predictions]
+        pred_batch_labels = [(prediction['is_fraud'] if prediction else random.choice([True, False])) for prediction in predictions ]
         
         real_labels.extend(real_batch_labels)
         pred_labels.extend(pred_batch_labels)
@@ -129,6 +130,12 @@ def evaluate_with_model(model, tokenizer, testdata_path, device='cuda', batch=Fa
     dataset = load_jsonl(testdata_path)
     run_test_func = run_test_batch if batch else run_test
     true_labels, pred_labels = run_test_func(model, tokenizer, dataset, device=device)
+    import json
+    with open('true_labels.json', 'w') as file:
+        json.dump(true_labels, file)
+    with open('pred_labels.json', 'w') as file:
+        json.dump(pred_labels, file)
+
     precision, recall, accuracy = precision_recall(true_labels, pred_labels, debug=debug)
     print(f"precision: {precision}, recall: {recall}, accuracy: {accuracy}")
 
