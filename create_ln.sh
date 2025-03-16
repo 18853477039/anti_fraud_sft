@@ -5,5 +5,5 @@ ln -s /root/autodl-fs/data2/root/.cache/modelscope/hub/Qwen /data2/anti_fraud/mo
 mkdir -p /root/autodl-fs/data2/models
 ln -s /root/autodl-fs/data2/models /data2/anti_fraud/models/
 # create dataset ln
-mkdir -p /data2/anti_fraud/dataset/
+mkdir -p /data2/anti_fraud/
 ln -s /root/anti_fraud_sft/dataset/train_test /data2/anti_fraud/dataset

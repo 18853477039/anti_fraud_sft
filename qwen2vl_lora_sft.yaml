@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: /data2/anti_fraud/models/modelscope/hub/Qwen/Qwen2-1___5B-Instruct
+adapter_name_or_path: /data2/anti_fraud/models/Qwen2-1___5B-Instruct_ft_0830_2/checkpoint-1900
+template: qwen
+finetuning_type: lora
+
+### export
+export_dir: /data2/anti_fraud/models/Qwen2-1__5B-Instruct-anti_fraud_1__0
+export_size: 5
+export_device: cpu
+export_legacy_format: false

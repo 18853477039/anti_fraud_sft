@@ -61,6 +61,7 @@ class LazySupervisedDataset(Dataset):
         self.with_reason = with_reason
         self.instruction=instruction
         self.cached_data_dict = {}
+        self._indices = None
 
     def __len__(self):
         return len(self.raw_data)
@@ -100,6 +101,7 @@ def load_model(model_path, device='cuda'):
     tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False, trust_remote_code=True)
     # torch_dtype控制参数加载的精度
     model = AutoModelForCausalLM.from_pretrained(model_path, torch_dtype=torch.bfloat16)
+    model.enable_input_require_grads() # 开启梯度检查点时，要执行该方法
     return model.to(device), tokenizer
 
 def build_loraconfig():
